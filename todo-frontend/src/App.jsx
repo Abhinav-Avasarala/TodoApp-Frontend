@@ -3,7 +3,6 @@ import { Clock } from 'lucide-react';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="flex flex-col h-screen bg-[#FFF3B0] text-[#4A4A4A] font-sans p-4">
