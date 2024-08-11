@@ -1,41 +1,37 @@
 import React from 'react';
+import {Container, Row, Col, Button} from 'react-bootstrap'
+import TimeBlockBar from './components/Timeblocks';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
   return (
-    <div className="container">
-      <h1>TaskGPT</h1>
-      <div className="main-content">
-        <div className="time-section">
-          <div className="total-time">
-            <p>Total time</p>
-            <div className="time-circle">
-              <p>4 hrs 18 mins</p>
-            </div>
-          </div>
-          <div className="time-blocks">
-            <p>Time Blocks</p>
-          </div>
-        </div>
-        <div className="tasks-section">
-          <div className="tasks-header">
-            <p>Tasks</p>
-            <button className="add-task">+</button>
-          </div>
-          <div className="task-item">
-            <div className="task-name">Task 1</div>
-            <div className="task-info">
-              <span className="priority">P1</span>
-              <span className="duration">4 hrs</span>
-            </div>
-          </div>
-        </div>
-        <div className="schedule-section">
-          <p>AI-Generated Schedule</p>
-        </div>
-      </div>
-      <button className="generate-button">Generate Schedule</button>
-    </div>
+    <Container className="d-flex flex-column container">
+      <Row className="mb-5">
+        <Col>
+          <h1 className="text-center">TaskGPT</h1>
+        </Col>
+      </Row>
+      <Row className="flex-grow-1 mb-3">
+      <Col md={4}>
+          <h2>Total Time</h2>
+          <TimeBlockBar />
+        </Col>
+        <Col md={4}>
+          <h2>Tasks</h2>
+        </Col>
+        <Col md={4}>
+          <h2>AI-Generated Schedule</h2>
+        </Col>
+      </Row>
+      <Row>
+        <Col className="text-center">
+          <Button variant="success" size="lg">Generate Schedule</Button>
+        </Col>
+      </Row>
+
+      
+    </Container>
   );
 }
 
